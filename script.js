@@ -54,13 +54,10 @@ document.getElementById("marketName").innerHTML="Loading...";
 
 document.getElementById("marketResult").innerHTML="XX";
 // ==========================
-// PART-4 : GOOGLE SHEET LIVE
-// script.js के सबसे नीचे पेस्ट करें
+// 
+
 // ==========================
-
-// बाद में यहाँ अपना Published CSV Link डालना
-const SHEET_URL = "PASTE_YOUR_GOOGLE_SHEET_CSV_LINK_HERE";
-
+const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQJhrDE0-59tOtmv2ZB3nsXFChM9KgI8Nb4ETzB6ePL_z1onJZphewWGEI1GYV0M4ZGS3ZNLs2teOry/pub?output=csv";
 async function loadSheetData() {
 
     try {
@@ -74,7 +71,7 @@ async function loadSheetData() {
 
         table.innerHTML = "";
 
-        // पहली Row Header होती है
+        // 
         for (let i = 1; i < rows.length; i++) {
 
             const row = rows[i];
