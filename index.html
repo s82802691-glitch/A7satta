@@ -1,107 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
 
-<!-- ===== A7SATTA HEADER START ===== -->
+<base target="_top">
+
+<title>A7SATTA - Fast Result</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f5f5;
+}
+
+
+/* HEADER */
+
+.top-header{
+background:#008000;
+color:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+
+.logo{
+width:70px;
+height:70px;
+border-radius:50%;
+}
+
+
+.logo-area{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+
+.logo-area h1{
+margin:0;
+font-size:28px;
+}
+
+
+.logo-area p{
+margin:3px 0;
+}
+
+
+
+/* CLOCK */
+
+#liveClock{
+font-size:16px;
+}
+
+
+
+/* MENU */
+
+.menu{
+background:#222;
+padding:12px;
+text-align:center;
+}
+
+
+.menu a{
+color:white;
+text-decoration:none;
+margin:8px;
+font-size:16px;
+font-weight:bold;
+}
+
+
+
+/* NOTICE */
+
+.notice-box{
+background:white;
+margin:10px;
+padding:10px;
+border-radius:8px;
+color:red;
+font-weight:bold;
+}
+
+
+
+/* CARD */
+
+.card{
+
+background:white;
+margin:15px;
+padding:15px;
+border-radius:12px;
+box-shadow:0 0 8px #ccc;
+
+}
+
+
+.card h2{
+
+background:#008000;
+color:white;
+padding:10px;
+text-align:center;
+border-radius:8px;
+
+}
+
+
+
+.info{
+
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+
+}
+
+
+.box{
+
+flex:1;
+min-width:140px;
+background:#eee;
+padding:15px;
+border-radius:10px;
+text-align:center;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<!-- HEADER START -->
+
 
 <header class="top-header">
 
+
 <div class="logo-area">
+
 <img src="logo.png" class="logo">
+
+<div>
+
 <h1>A7SATTA</h1>
-<p>India's Fast Result</p>
+
+<p>भारत का फास्ट रिजल्ट</p>
+
 </div>
+
+
+</div>
+
 
 <div id="liveClock"></div>
 
+
 </header>
+
+
+
+<!-- MENU -->
+
 
 <nav class="menu">
 
-<a href="#">HOME</a>
+<a href="#home">होम</a>
 
-<a href="#chart">CHART</a>
+<a href="#chart">चार्ट</a>
 
-<a href="#result">RESULT</a>
+<a href="#result">रिजल्ट</a>
 
-<a href="#contact">CONTACT</a>
+<a href="#contact">कॉन्टेक्ट</a>
 
 </nav>
 
+
+
+<!-- NOTICE -->
+
+
 <div class="notice-box">
 
-<marquee behavior="scroll" direction="left" scrollamount="5">
 
-🔥 Welcome To A7SATTA Official | Fast Result | satta Live Update | Daily Chart Available 🔥
+<marquee scrollamount="5">
+
+🔥 A7SATTA Official | फास्ट रिजल्ट | लाइव अपडेट | रोजाना चार्ट उपलब्ध 🔥
 
 </marquee>
 
+
 </div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Results</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-<header class="top-header">
-  <h1>LIVE RESULTS</h1>
-  <div id="liveClock"></div>
-</header>
 
-<main>
 
-  <section class="result-box">
-    <h2>Latest Results</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Result</th>
-          <th>Time</th>
-          <th>Status</th>
-          <th>Updated</th>
-        </tr>
-      </thead>
-      <tbody id="marketTable"></tbody>
-    </table>
-  </section>
+<!-- HOME -->
 
-  <section class="result-box">
-    <h2>More Results</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Result</th>
-          <th>Time</th>
-          <th>Status</th>
-          <th>Updated</th>
-        </tr>
-      </thead>
-      <tbody id="table2"></tbody>
-    </table>
-  </section>
 
-  <section class="result-box">
-    <h2>Monthly Chart</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Name</th>
-          <th>Result</th>
-          <th>Time</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody id="monthlyChart"></tbody>
-    </table>
-  </section>
+<div class="card" id="home">
 
-</main>
 
-<script src="script.js"></script>
+<h2>🏠 होम</h2>
+
+
+<div class="info">
+
+
+<div class="box">
+
+⏰ अगला रिजल्ट
+
+<br>
+
+जल्द आएगा
+
+</div>
+
+
+<div class="box">
+
+📅 आज का रिजल्ट
+
+<br>
+
+Loading...
+
+</div>
+
+
+
+<div class="box">
+
+📆 कल का रिजल्ट
+
+<br>
+
+Loading...
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<!-- RESULT -->
+
+
+<div class="card" id="result">
+
+
+<h2>🏆 आज का रिजल्ट</h2>
+
+
+<p style="text-align:center;">
+
+रिजल्ट यहां दिखाई देगा
+
+</p>
+
+
+</div>
+
+
+
+
+<!-- CHART -->
+
+
+<div class="card" id="chart">
+
+
+<h2>📊 रिजल्ट चार्ट</h2>
+
+
+<p style="text-align:center;">
+
+पूरा चार्ट जल्द लोड होगा
+
+</p>
+
+
+</div>
+
+
+
+
+<!-- CONTACT -->
+
+
+<div class="card" id="contact">
+
+
+<h2>📞 संपर्क</h2>
+
+
+<p style="text-align:center;">
+
+Contact Details यहां आएगी
+
+</p>
+
+
+</div>
+
+
+
+
+<script>
+
+
+// LIVE CLOCK
+
+function clock(){
+
+let d=new Date();
+
+document.getElementById("liveClock").innerHTML =
+d.toLocaleString("hi-IN");
+
+
+}
+
+
+setInterval(clock,1000);
+
+clock();
+
+
+</script>
+
+
+
 </body>
+
 </html>
