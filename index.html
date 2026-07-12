@@ -319,7 +319,7 @@ Loading...
 
 <p style="text-align:center;">
 
-Contact Details यहां आएगी
+कांटेक्ट करें यहां आएगी
 
 </p>
 
@@ -351,11 +351,82 @@ clock();
 
 
 </script>
+// GOOGLE SHEET RESULT LOAD
+
+function loadResult(){
+
+google.script.run
+.withSuccessHandler(function(data){
+
+let html="";
 
 
+for(let i=1;i<data.length;i++){
+
+html += "<tr>";
+
+html += "<td>"+data[i][0]+"</td>";
+
+html += "<td>"+data[i][1]+"</td>";
+
+html += "<td>"+data[i][2]+"</td>";
+
+html += "</tr>";
+
+}
+
+
+document.getElementById("todayResult").innerHTML = html;
+
+
+})
+.getResultData();
+
+
+}
+
+
+loadResult();
+<!-- WhatsApp Contact Button -->
+
+<a href="https://wa.me/919649269875?text=भाई जी कैसे हो" 
+target="_blank"
+class="whatsapp-btn">
+
+💬 WhatsApp करें
+
+</a>
+
+
+<style>
+
+.whatsapp-btn{
+
+position:fixed;
+bottom:20px;
+right:20px;
+
+background:#25D366;
+color:white;
+
+padding:14px 20px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-size:18px;
+
+font-weight:bold;
+
+box-shadow:0 3px 10px #888;
+
+}
+
+</style>
 
 </body>
-
+ 
 </html>
 <!-- ===== PART 2 START ===== -->
 
