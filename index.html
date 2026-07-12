@@ -29,56 +29,79 @@
 
 <marquee behavior="scroll" direction="left" scrollamount="5">
 
-🔥 Welcome To A7SATTA Official | Fast Result | Google Sheet Live Update | Daily Chart Available 🔥
+🔥 Welcome To A7SATTA Official | Fast Result | satta Live Update | Daily Chart Available 🔥
 
 </marquee>
 
 </div>
 
-<section class="live-result">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Results</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<h2>LIVE RESULT</h2>
+<header class="top-header">
+  <h1>LIVE RESULTS</h1>
+  <div id="liveClock"></div>
+</header>
 
-<div class="live-card">
+<main>
 
-<div class="market-name" id="marketName">
-Loading...
-</div>
+  <section class="result-box">
+    <h2>Latest Results</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Result</th>
+          <th>Time</th>
+          <th>Status</th>
+          <th>Updated</th>
+        </tr>
+      </thead>
+      <tbody id="table1"></tbody>
+    </table>
+  </section>
 
-<div class="market-result" id="marketResult">
-XX
-</div>
+  <section class="result-box">
+    <h2>More Results</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Result</th>
+          <th>Time</th>
+          <th>Status</th>
+          <th>Updated</th>
+        </tr>
+      </thead>
+      <tbody id="table2"></tbody>
+    </table>
+  </section>
 
-</div>
+  <section class="result-box">
+    <h2>Monthly Chart</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Name</th>
+          <th>Result</th>
+          <th>Time</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="monthlyChart"></tbody>
+    </table>
+  </section>
 
-</section>
+</main>
 
-<section class="today-table" id="result">
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>Status</th>
-
-<th>Market</th>
-
-<th>Time</th>
-
-<th>Result</th>
-
-</tr>
-
-</thead>
-
-<tbody id="marketTable">
-
-</tbody>
-
-</table>
-
-</section>
-
-<!-- ===== HEADER END ===== -->
+<script src="script.js"></script>
+</body>
+</html>
