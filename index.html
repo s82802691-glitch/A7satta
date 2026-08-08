@@ -2,211 +2,112 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>ONLINE RESULTS</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial,sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 
-body{
-  background:#f3f5f3;
-  color:#222;
-}
+body{background:#f3f5f3;color:#222}
 
 .top{
-  background:linear-gradient(135deg,#2e7d32,#66bb6a);
-  color:#fff;
-  text-align:center;
-  padding:15px 12px 20px;
-  border-radius:0 0 28px 28px;
-  box-shadow:0 4px 15px rgba(0,0,0,.18);
+background:linear-gradient(135deg,#2e7d32,#66bb6a);
+color:#fff;text-align:center;padding:15px 12px 20px;
+border-radius:0 0 28px 28px;
+box-shadow:0 4px 15px rgba(0,0,0,.18)
 }
 
-.logo{
-  width:58px;
-  height:58px;
-  object-fit:cover;
-  border-radius:50%;
-  border:2px solid white;
-  box-shadow:0 0 14px rgba(255,255,255,.8);
+.logo,.footer-logo{
+width:58px;height:58px;object-fit:cover;border-radius:50%;
+border:2px solid #fff
 }
 
-.top h1{
-  margin:8px 0;
-  font-size:25px;
-}
+.top h1{margin:8px 0;font-size:25px}
 
 .clock{
-  display:inline-block;
-  background:rgba(0,0,0,.22);
-  padding:8px 17px;
-  border-radius:25px;
-  font-size:18px;
-  font-weight:bold;
+display:inline-block;background:rgba(0,0,0,.22);
+padding:8px 17px;border-radius:25px;
+font-size:18px;font-weight:bold
 }
 
 .live{
-  margin:14px 12px;
-  padding:12px;
-  text-align:center;
-  color:white;
-  font-weight:bold;
-  font-size:18px;
-  border-radius:14px;
-  background:linear-gradient(90deg,#43a047,#81c784);
+margin:14px 12px;padding:12px;text-align:center;
+color:#fff;font-weight:bold;font-size:18px;border-radius:14px;
+background:linear-gradient(90deg,#43a047,#81c784)
 }
 
 .update{
-  display:none;
-  margin:12px;
-  padding:13px;
-  text-align:center;
-  color:#1b5e20;
-  background:white;
-  border-radius:13px;
-  font-weight:bold;
-  animation:glow 1s infinite alternate;
+display:none;margin:12px;padding:13px;text-align:center;
+color:#1b5e20;background:#fff;border-radius:13px;
+font-weight:bold;animation:glow 1s infinite alternate
 }
 
 @keyframes glow{
-  from{box-shadow:0 0 7px #81c784}
-  to{box-shadow:0 0 25px #2e7d32}
+from{box-shadow:0 0 7px #81c784}
+to{box-shadow:0 0 25px #2e7d32}
 }
 
 .table-box{
-  margin:12px;
-  background:#fff;
-  border-radius:16px;
-  overflow:hidden;
-  box-shadow:0 4px 14px rgba(0,0,0,.13);
+margin:12px;background:#fff;border-radius:16px;
+overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.13)
 }
 
 .table-title{
-  padding:14px;
-  text-align:center;
-  color:#fff;
-  font-size:21px;
-  font-weight:bold;
-  background:linear-gradient(135deg,#2e7d32,#66bb6a);
+padding:14px;text-align:center;color:#fff;
+font-size:21px;font-weight:bold;
+background:linear-gradient(135deg,#2e7d32,#66bb6a)
 }
 
-table{
-  width:100%;
-  border-collapse:collapse;
-}
+table{width:100%;border-collapse:collapse}
 
 th{
-  background:#e8f5e9;
-  color:#1b5e20;
-  padding:12px 5px;
-  font-size:13px;
-  border-bottom:2px solid #81c784;
+background:#e8f5e9;color:#1b5e20;padding:12px 5px;
+font-size:13px;border-bottom:2px solid #81c784
 }
 
 td{
-  padding:11px 4px;
-  text-align:center;
-  border-bottom:1px solid #ddd;
-  font-size:15px;
-  font-weight:bold;
+padding:11px 4px;text-align:center;
+border-bottom:1px solid #ddd;font-size:15px;font-weight:bold
 }
 
-tr:nth-child(even){
-  background:#f8fff8;
-}
+tr:nth-child(even){background:#f8fff8}
 
-.name{
-  text-align:left;
-}
+.name{text-align:left}
 
 .row-logo{
-  width:34px;
-  height:34px;
-  border-radius:50%;
-  object-fit:cover;
-  vertical-align:middle;
-  margin-right:5px;
-  border:2px solid #4caf50;
+width:34px;height:34px;border-radius:50%;
+object-fit:cover;vertical-align:middle;
+margin-right:5px;border:2px solid #4caf50
 }
 
-.name-text{
-  display:inline-block;
-  vertical-align:middle;
-}
+.name-text{display:inline-block;vertical-align:middle}
 
-.time{
-  font-size:11px;
-  color:#666;
-  margin-top:3px;
-}
+.time{font-size:11px;color:#666;margin-top:3px}
 
 .status{
-  display:inline-block;
-  padding:4px 7px;
-  border-radius:6px;
-  background:#4caf50;
-  color:#fff;
-  font-size:11px;
+display:inline-block;padding:4px 7px;border-radius:6px;
+background:#4caf50;color:#fff;font-size:11px
 }
 
 .article{
-  margin:12px;
-  padding:17px;
-  background:white;
-  border-radius:15px;
-  border-left:5px solid #4caf50;
-  box-shadow:0 2px 9px rgba(0,0,0,.1);
+margin:12px;padding:17px;background:#fff;
+border-radius:15px;border-left:5px solid #4caf50;
+box-shadow:0 2px 9px rgba(0,0,0,.1)
 }
 
-.article h2{
-  color:#2e7d32;
-  margin-bottom:8px;
-}
-
-.article p{
-  line-height:25px;
-}
+.article h2{color:#2e7d32;margin-bottom:8px}
+.article p{line-height:25px}
 
 footer{
-  margin-top:20px;
-  padding:22px;
-  text-align:center;
-  color:white;
-  background:#2e7d32;
-}
-
-.footer-logo{
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  border:2px solid white;
-  object-fit:cover;
+margin-top:20px;padding:22px;text-align:center;
+color:#fff;background:#2e7d32
 }
 
 @media(max-width:600px){
-
-  th{
-    font-size:11px;
-  }
-
-  td{
-    font-size:12px;
-    padding:9px 2px;
-  }
-
-  .name{
-    min-width:125px;
-  }
-
-  .row-logo{
-    width:29px;
-    height:29px;
-  }
+th{font-size:11px}
+td{font-size:12px;padding:9px 2px}
+.name{min-width:125px}
+.row-logo{width:29px;height:29px}
 }
 </style>
 </head>
@@ -214,13 +115,9 @@ footer{
 <body>
 
 <div class="top">
-
-  <img src="logo.png" class="logo">
-
-  <h1>ONLINE RESULTS</h1>
-
-  <div class="clock" id="clock">00:00:00</div>
-
+<img src="logo.png" class="logo">
+<h1>ONLINE RESULTS</h1>
+<div class="clock" id="clock">00:00:00</div>
 </div>
 
 <div class="live">
@@ -235,341 +132,290 @@ footer{
 
 <div class="table-box">
 
-  <div class="table-title">
-    📊 LIVE DATA
-  </div>
+<div class="table-title">📊 LIVE DATA</div>
 
-  <table>
+<table>
+<thead>
+<tr>
+<th>STATUS</th>
+<th>NAME / TIME</th>
+<th>PREVIOUS</th>
+<th>TODAY</th>
+</tr>
+</thead>
 
-    <thead>
-      <tr>
-        <th>STATUS</th>
-        <th>NAME / TIME</th>
-        <th>PREVIOUS</th>
-        <th>TODAY</th>
-      </tr>
-    </thead>
+<tbody id="dataBody">
+<tr>
+<td colspan="4">Loading data...</td>
+</tr>
+</tbody>
 
-    <tbody id="dataBody">
-
-      <tr>
-        <td colspan="4">Loading data...</td>
-      </tr>
-
-    </tbody>
-
-  </table>
-
+</table>
 </div>
 
 <div class="article">
-
-  <h2>🌿 Daily Updates</h2>
-
-  <p>
-    यहां latest information और daily updates एक ही जगह
-    पर उपलब्ध हैं।
-  </p>
-
+<h2>🌿 Daily Updates</h2>
+<p>
+यहां latest information और daily updates एक ही जगह
+पर उपलब्ध हैं।
+</p>
 </div>
 
 <div class="article">
-
-  <h2>⭐ Latest Information</h2>
-
-  <p>
-    डेटा नियमित रूप से अपडेट किया जाता है ताकि आपको
-    latest information आसानी से मिल सके।
-  </p>
-
+<h2>⭐ Latest Information</h2>
+<p>
+डेटा नियमित रूप से अपडेट किया जाता है ताकि latest
+information आसानी से मिल सके।
+</p>
 </div>
 
 <footer>
 
-  <img src="logo.png" class="footer-logo">
+<img src="logo.png" class="footer-logo">
 
-  <h3 style="margin-top:8px;">ONLINE RESULTS</h3>
+<h3 style="margin-top:8px;">ONLINE RESULTS</h3>
 
-  <p style="margin-top:6px;font-size:13px;">
-    Fast Updates • Daily Information
-  </p>
+<p style="margin-top:6px;font-size:13px;">
+Fast Updates • Daily Information
+</p>
 
-  <p style="margin-top:8px;font-size:12px;">
-    © 2026 All Rights Reserved
-  </p>
+<p style="margin-top:8px;font-size:12px;">
+© 2026 All Rights Reserved
+</p>
 
 </footer>
 
 <script>
 
-/* =========================
-   LIVE CLOCK
-========================= */
+/* LIVE CLOCK */
 
 function updateClock(){
 
-  const now = new Date();
+const now=new Date();
 
-  const h = String(now.getHours()).padStart(2,"0");
-  const m = String(now.getMinutes()).padStart(2,"0");
-  const s = String(now.getSeconds()).padStart(2,"0");
+document.getElementById("clock").textContent =
+"🕒 "+
+String(now.getHours()).padStart(2,"0")+":"+
+String(now.getMinutes()).padStart(2,"0")+":"+
+String(now.getSeconds()).padStart(2,"0");
 
-  document.getElementById("clock").textContent =
-    "🕒 " + h + ":" + m + ":" + s;
 }
 
 updateClock();
 setInterval(updateClock,1000);
 
 
-/* =========================
-   GOOGLE SHEET
-   सामान्य/non-gambling data
-========================= */
+/*
+  सामान्य public-data Google Sheet के लिए
+  published CSV URL यहां लगाएं.
+*/
 
-const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBZCDddBSSFrPnx8hNWqYZOHJv667cU2FP_ngC4PdsjfINvskiZjvoehO_k7448ExK6qq9MkJoU5Kt/pubhtml";
+const sheetURL="YOUR_PUBLISHED_CSV_URL";
 
-let oldData = "";
-let firstLoad = true;
+let oldData="";
+let firstLoad=true;
 
 
-/* =========================
-   LOAD SHEET
-========================= */
+/* LOAD DATA */
 
 async function loadSheet(){
 
-  if(sheetURL === "YOUR_PUBLISHED_CSV_URL"){
-    document.getElementById("dataBody").innerHTML = `
-      <tr>
-        <td colspan="4">
-        https://docs.google.com/spreadsheets/d/e/2PACX-1vQBZCDddBSSFrPnx8hNWqYZOHJv667cU2FP_ngC4PdsjfINvskiZjvoehO_k7448ExK6qq9MkJoU5Kt/pubhtml
-        </td>
-      </tr>
-    `;
-    return;
-  }
+if(sheetURL==="YOUR_PUBLISHED_CSV_URL"){
 
-  try{
+document.getElementById("dataBody").innerHTML=`
+<tr>
+<td colspan="4">
+CSV URL डालने के बाद data दिखाई देगा
+</td>
+</tr>`;
 
-    const url =
-      sheetURL +
-      (sheetURL.includes("?") ? "&" : "?") +
-      "cache=" + Date.now();
+return;
+}
 
-    const response = await fetch(url);
+try{
 
-    if(!response.ok){
-      throw new Error("Sheet could not be loaded");
-    }
+const separator=sheetURL.includes("?")?"&":"?";
 
-    const text = await response.text();
+const response=await fetch(
+sheetURL+separator+"cache="+Date.now()
+);
 
-    if(!firstLoad && text !== oldData){
-      showUpdate();
-    }
+if(!response.ok)
+throw new Error("Sheet loading failed");
 
-    oldData = text;
-    firstLoad = false;
+const text=await response.text();
 
-    const rows = parseCSV(text);
+if(!firstLoad && text!==oldData)
+showUpdate();
 
-    let html = "";
+oldData=text;
+firstLoad=false;
 
-    for(let i=1;i<rows.length;i++){
+const rows=parseCSV(text);
 
-      const col = rows[i];
+let html="";
 
-      if(!col || col.length < 5) continue;
+for(let i=1;i<rows.length;i++){
 
-      html += `
-        <tr>
+const col=rows[i];
 
-          <td>
-            <span class="status">
-              ${escapeHTML(col[0] || "LIVE")}
-            </span>
-          </td>
+if(!col || col.length<5) continue;
 
-          <td class="name">
+html+=`
+<tr>
 
-            <img
-              src="logo.png"
-              class="row-logo"
-            >
+<td>
+<span class="status">
+${safe(col[0]||"LIVE")}
+</span>
+</td>
 
-            <span class="name-text">
+<td class="name">
 
-              ${escapeHTML(col[1] || "")}
+<img src="logo.png" class="row-logo">
 
-              <div class="time">
-                ${escapeHTML(col[2] || "")}
-              </div>
+<span class="name-text">
+${safe(col[1]||"")}
+<div class="time">
+${safe(col[2]||"")}
+</div>
+</span>
 
-            </span>
+</td>
 
-          </td>
+<td>${safe(col[3]||"-")}</td>
 
-          <td>
-            ${escapeHTML(col[3] || "-")}
-          </td>
+<td>${safe(col[4]||"-")}</td>
 
-          <td>
-            ${escapeHTML(col[4] || "-")}
-          </td>
+</tr>
+`;
+}
 
-        </tr>
-      `;
-    }
+document.getElementById("dataBody").innerHTML=
+html||
+`<tr><td colspan="4">No data available</td></tr>`;
 
-    document.getElementById("dataBody").innerHTML =
-      html ||
-      `<tr>
-        <td colspan="4">No data available</td>
-      </tr>`;
+}catch(error){
 
-  }catch(error){
+console.log(error);
 
-    console.log(error);
+document.getElementById("dataBody").innerHTML=
+`<tr>
+<td colspan="4">Data load नहीं हो पाया</td>
+</tr>`;
 
-    document.getElementById("dataBody").innerHTML =
-      `<tr>
-        <td colspan="4">
-          Data load नहीं हो पाया
-        </td>
-      </tr>`;
-  }
+}
+
 }
 
 
-/* =========================
-   CSV PARSER
-========================= */
+/* CSV PARSER */
 
 function parseCSV(text){
 
-  const rows = [];
-  let row = [];
-  let value = "";
-  let quotes = false;
+const rows=[];
+let row=[];
+let value="";
+let quoted=false;
 
-  for(let i=0;i<text.length;i++){
+for(let i=0;i<text.length;i++){
 
-    const char = text[i];
-    const next = text[i+1];
+const c=text[i];
+const next=text[i+1];
 
-    if(char === '"' && quotes && next === '"'){
-      value += '"';
-      i++;
-    }
+if(c==='"' && quoted && next==='"'){
+value+='"';
+i++;
+}
 
-    else if(char === '"'){
-      quotes = !quotes;
-    }
+else if(c==='"'){
+quoted=!quoted;
+}
 
-    else if(char === "," && !quotes){
-      row.push(value.trim());
-      value = "";
-    }
+else if(c===',' && !quoted){
+row.push(value.trim());
+value="";
+}
 
-    else if((char === "\n" || char === "\r") && !quotes){
+else if((c==='\n'||c==='\r')&&!quoted){
 
-      if(char === "\r" && next === "\n"){
-        i++;
-      }
+if(c==='\r'&&next==='\n') i++;
 
-      row.push(value.trim());
-      value = "";
+row.push(value.trim());
 
-      if(row.some(x => x !== "")){
-        rows.push(row);
-      }
+if(row.some(x=>x!==""))
+rows.push(row);
 
-      row = [];
-    }
+row=[];
+value="";
+}
 
-    else{
-      value += char;
-    }
-  }
+else{
+value+=c;
+}
+}
 
-  if(value !== "" || row.length){
-    row.push(value.trim());
+if(value!==""||row.length){
+row.push(value.trim());
+if(row.some(x=>x!==""))
+rows.push(row);
+}
 
-    if(row.some(x => x !== "")){
-      rows.push(row);
-    }
-  }
-
-  return rows;
+return rows;
 }
 
 
-/* =========================
-   SAFE TEXT
-========================= */
+/* SAFE TEXT */
 
-function escapeHTML(text){
+function safe(text){
 
-  return String(text)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+return String(text)
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
 }
 
 
-/* =========================
-   15 MINUTE UPDATE GLOW
-========================= */
+/* 15 MINUTE GLOW */
 
 function showUpdate(){
 
-  const box =
-    document.getElementById("updateBox");
+const box=document.getElementById("updateBox");
+const timer=document.getElementById("updateTimer");
 
-  const timer =
-    document.getElementById("updateTimer");
+box.style.display="block";
 
-  box.style.display = "block";
+const end=Date.now()+15*60*1000;
 
-  const end =
-    Date.now() + 15 * 60 * 1000;
+const interval=setInterval(()=>{
 
-  const interval =
-    setInterval(function(){
+const left=Math.max(0,end-Date.now());
 
-      const remaining =
-        Math.max(0,end-Date.now());
+const min=Math.floor(left/60000);
+const sec=Math.floor((left%60000)/1000);
 
-      const minutes =
-        Math.floor(remaining / 60000);
+timer.textContent=
+"✨ Updated • Glow "+
+String(min).padStart(2,"0")+":"+
+String(sec).padStart(2,"0");
 
-      const seconds =
-        Math.floor((remaining % 60000) / 1000);
+if(left<=0){
 
-      timer.textContent =
-        "✨ Updated • Glow " +
-        String(minutes).padStart(2,"0") +
-        ":" +
-        String(seconds).padStart(2,"0");
+box.style.display="none";
+clearInterval(interval);
 
-      if(remaining <= 0){
+}
 
-        box.style.display = "none";
-        clearInterval(interval);
+},1000);
 
-      }
-
-    },1000);
 }
 
 
-/* CHECK EVERY 60 SECONDS */
+/* AUTO REFRESH */
 
 loadSheet();
-
 setInterval(loadSheet,60000);
 
 </script>
