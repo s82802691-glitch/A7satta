@@ -177,159 +177,267 @@ text-align:center;
 
 
 
-<!-- MENU -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<nav class="menu">
+<title>Online Khaiwal Result | Super Fast Result</title>
 
-<a href="#home">होम</a>
+<meta name="description" content="Daily Online Khaiwal Result, Gold Star Result, Royal Star Result">
 
-<a href="#chart">चार्ट</a>
+<style>
 
-<a href="#result">रिजल्ट</a>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-<a href="#contact">कॉन्टेक्ट</a>
+body{
+font-family:Arial,sans-serif;
+background:#f2f2f2;
+}
 
-</nav>
+.top{
+background:#001818;
+color:#fff;
+padding:15px;
+text-align:center;
+border-radius:0 0 18px 18px;
+}
 
+.top h1{
+color:#FFD700;
+font-size:28px;
+margin-bottom:10px;
+}
 
+.market{
+font-size:15px;
+padding:3px 0;
+}
 
-<!-- NOTICE -->
+.phone{
+font-size:30px;
+font-weight:bold;
+color:#FFD700;
+margin:10px 0;
+}
 
+.btn{
+display:inline-block;
+padding:9px 18px;
+margin:4px;
+border-radius:25px;
+text-decoration:none;
+font-size:14px;
+font-weight:bold;
+color:#fff;
+}
 
-<div class="notice-box">
+.whatsapp{
+background:#25D366;
+}
 
+.call{
+background:#ff2d2d;
+}
 
-<marquee scrollamount="5">
+.live{
+background:linear-gradient(90deg,#ff0066,#ff9900);
+color:#fff;
+font-size:18px;
+font-weight:bold;
+text-align:center;
+padding:9px;
+margin-top:8px;
+}
 
-🔥 A7SATTA Official | फास्ट रिजल्ट | लाइव अपडेट | रोजाना चार्ट उपलब्ध 🔥
+#result{
+max-width:700px;
+margin:auto;
+}
 
-</marquee>
+.box{
+padding:10px;
+margin:8px;
+border-radius:12px;
+box-shadow:0 2px 8px rgba(0,0,0,.15);
+overflow:hidden;
+}
 
+.status{
+display:inline-block;
+padding:4px 10px;
+border-radius:6px;
+font-size:12px;
+font-weight:bold;
+color:#fff;
+}
+
+.result{
+float:right;
+text-align:right;
+}
+
+.name{
+font-size:18px;
+font-weight:bold;
+margin-top:6px;
+}
+
+.time{
+font-size:13px;
+color:#666;
+margin-top:2px;
+}
+
+.chart a{
+font-size:12px;
+font-weight:bold;
+color:#1a73e8;
+text-decoration:none;
+}
+
+.article{
+background:#fff;
+padding:15px;
+margin:10px;
+border-radius:12px;
+box-shadow:0 2px 8px rgba(0,0,0,.12);
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="top">
+
+<h1>ONLINE KHAIWAL</h1>
+
+<div id="topMarkets"></div>
+
+<p>जोड़ी रेट 10.....950</p>
+<p>सबसे फास्ट पेमेंट की सुविधा</p>
+
+<div class="phone">8955873780</div>
+
+<a class="btn whatsapp" href="https://wa.me/919649269875">WhatsApp</a>
+
+<a class="btn call" href="tel:9649269875">Call Now</a>
 
 </div>
 
-
-
-
-<!-- HOME -->
-
-
-<div class="card" id="home">
-
-
-<h2>🏠 होम</h2>
-
-
-<div class="info">
-
-
-<div class="box">
-
-⏰ अगला रिजल्ट
-
-<br>
-
-जल्द आएगा
-
+<div class="live">
+🔥 SATTA KING SUPER FAST RESULTS 🔥
 </div>
 
-
-<div class="box">
-
-📅 आज का रिजल्ट
-
-<br>
-
-Loading...
-
-</div>
-
-
-
-<div class="box">
-
-📆 कल का रिजल्ट
-
-<br>
-
-Loading...
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-
-<!-- RESULT -->
-
-
-<div class="card" id="result">
-
-
-<h2>🏆 आज का रिजल्ट</h2>
-
-
-<p style="text-align:center;">
-
-रिजल्ट यहां दिखाई देगा
-
-</p>
-
-
-</div>
-
-
-
-
-<!-- CHART -->
-
-
-<div class="card" id="chart">
-
-
-<h2>📊 रिजल्ट चार्ट</h2>
-
-
-<p style="text-align:center;">
-
-पूरा चार्ट जल्द लोड होगा
-
-</p>
-
-
-</div>
-
-
-
-
-<!-- CONTACT -->
-
-
-<div class="card" id="contact">
-
-
-<h2>📞 संपर्क</h2>
-
-
-<p style="text-align:center;">
-
-कांटेक्ट करें यहां आएगी
-
-</p>
-
-
-</div>
-
-
-
+<div id="result"></div>
 
 <script>
+
+const sheetURL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQBZCDddBSSFrPnx8hNWqYZOHJv667cU2FP_ngC4PdsjfINvskiZjvoehO_k7448ExK6qq9MkJoU5Kt/pub?output=csv";
+
+fetch(sheetURL)
+.then(res=>res.text())
+.then(data=>{
+
+let rows=data.trim().split("\n");
+let header=rows[0].split(",");
+
+let topHTML="";
+let resultHTML="";
+
+for(let i=1;i<rows.length;i++){
+
+let col=rows[i].split(",");
+
+topHTML+=`
+<div class="market">🔥 ${col[1]} ........ ${col[2]}</div>
+`;
+
+let badgeColor=col[0].trim().toUpperCase()=="LIVE"
+?"#16a34a":"#444";
+
+resultHTML+=`
+
+<div class="box" style="background:${i%2==0?'#ffffff':'#ffe680'}">
+
+<div class="status" style="background:${badgeColor}">
+${col[0]}
+</div>
+
+<div class="result">
+
+<div style="font-size:12px;color:#d60000;font-weight:bold;">
+${header[3]} &nbsp;&nbsp; ${header[4]}
+</div>
+
+<div style="font-size:36px;font-weight:bold;line-height:1.1;">
+${col[3]} &nbsp; ${col[4]}
+</div>
+
+</div>
+
+<div class="name">${col[1]}</div>
+
+<div class="time">at ${col[2]}</div>
+
+<div class="chart">
+<a href="#">📈 Record Chart</a>
+</div>
+
+<div style="clear:both;"></div>
+
+</div>
+
+`;
+
+}
+
+document.getElementById("topMarkets").innerHTML=topHTML;
+document.getElementById("result").innerHTML=resultHTML;
+
+});
+
+</script>
+<div class="article">
+
+<h2>🌟 Royal Star Result Today</h2>
+
+<p>
+Royal Star का रिजल्ट प्रतिदिन अपडेट किया जाता है।
+यहां आपको लाइव रिजल्ट, रिकॉर्ड चार्ट और लेटेस्ट अपडेट सबसे पहले मिलते हैं।
+</p>
+
+</div>
+
+<div class="article">
+
+<h2>⭐ Gold Star Result Today</h2>
+
+<p>
+Gold Star मार्केट का लाइव रिजल्ट और पुराने रिकॉर्ड एक ही जगह उपलब्ध हैं।
+</p>
+
+</div>
+
+<div class="article">
+
+<h2>🔥 Delhi Super Bazar Result Today</h2>
+
+<p>
+Delhi Super Bazar के लेटेस्ट रिजल्ट, रिकॉर्ड चार्ट और दैनिक अपडेट यहां उपलब्ध हैं।
+</p>
+
+</div>
+
+</body>
+</html>
 
 
 // LIVE CLOCK
@@ -351,73 +459,6 @@ clock();
 
 
 </script>
-// GOOGLE SHEET RESULT LOAD
-
-function loadResult(){
-
-google.script.run
-.withSuccessHandler(function(data){
-
-let html="";
-
-
-for(let i=1;i<data.length;i++){
-
-html += "<tr>";
-
-html += "<td>"+data[i][0]+"</td>";
-
-html += "<td>"+data[i][1]+"</td>";
-
-html += "<td>"+data[i][2]+"</td>";
-
-html += "</tr>";
-
-}
-
-
-document.getElementById("todayResult").innerHTML = html;
-
-
-})
-.getResultData();
-
-
-}
-
-
-loadResult();
-<!-- WhatsApp Contact Button -->
-
-<a href="https://wa.me/919649269875?text=भाई जी कैसे हो" 
-target="_blank"
-class="whatsapp-btn">
-
-💬 WhatsApp करें
-
-</a>
-
-
-<style>
-
-.whatsapp-btn{
-
-position:fixed;
-bottom:20px;
-right:20px;
-
-background:#25D366;
-color:white;
-
-padding:14px 20px;
-
-border-radius:50px;
-
-text-decoration:none;
-
-font-size:18px;
-
-font-weight:bold;
 
 box-shadow:0 3px 10px #888;
 
@@ -428,203 +469,3 @@ box-shadow:0 3px 10px #888;
 </body>
  
 </html>
-<!-- ===== PART 2 START ===== -->
-
-
-<div class="card">
-
-<h2>⏰ अगला रिजल्ट कब आएगा?</h2>
-
-<div class="info">
-
-<div class="box">
-
-🌞 सुबह का रिजल्ट
-
-<br>
-
-समय: 11:00 AM
-
-</div>
-
-
-<div class="box">
-
-🌆 शाम का रिजल्ट
-
-<br>
-
-समय: 04:00 PM
-
-</div>
-
-
-<div class="box">
-
-🌙 रात का रिजल्ट
-
-<br>
-
-समय: 09:00 PM
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-
-<!-- TODAY RESULT -->
-
-
-<div class="card" id="today">
-
-
-<h2>🏆 आज का रिजल्ट</h2>
-
-
-<table width="100%" border="1" cellpadding="10">
-
-
-<tr>
-
-<th>मार्केट</th>
-
-<th>रिजल्ट</th>
-
-<th>समय</th>
-
-</tr>
-
-
-<tbody id="todayResult">
-
-
-<tr>
-
-<td colspan="3" align="center">
-
-आज का रिजल्ट जल्द अपडेट होगा
-
-</td>
-
-</tr>
-
-
-</tbody>
-
-
-</table>
-
-
-</div>
-
-
-
-
-
-<!-- YESTERDAY RESULT -->
-
-
-<div class="card">
-
-
-<h2>📅 कल का रिजल्ट</h2>
-
-
-<table width="100%" border="1" cellpadding="10">
-
-
-<tr>
-
-<th>मार्केट</th>
-
-<th>रिजल्ट</th>
-
-<th>समय</th>
-
-</tr>
-
-
-<tbody id="oldResult">
-
-
-<tr>
-
-<td colspan="3" align="center">
-
-कल का रिजल्ट यहां दिखाई देगा
-
-</td>
-
-</tr>
-
-
-</tbody>
-
-
-</table>
-
-
-</div>
-
-
-
-
-
-<!-- CHART TABLE -->
-
-
-<div class="card">
-
-
-<h2>📊 पूरा चार्ट</h2>
-
-
-<table width="100%" border="1" cellpadding="10">
-
-
-<tr>
-
-<th>दिनांक</th>
-
-<th>मार्केट</th>
-
-<th>रिजल्ट</th>
-
-</tr>
-
-
-<tr>
-
-<td>आज</td>
-
-<td>--</td>
-
-<td>--</td>
-
-</tr>
-
-
-<tr>
-
-<td>कल</td>
-
-<td>--</td>
-
-<td>--</td>
-
-</tr>
-
-
-</table>
-
-
-</div>
-
-
-
-<!-- ===== PART 2 END ===== -->
