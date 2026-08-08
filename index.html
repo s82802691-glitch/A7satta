@@ -2,7 +2,7 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ONLINE RESULTS</title>
 
 <style>
@@ -22,74 +22,75 @@ body{
   background:linear-gradient(135deg,#2e7d32,#66bb6a);
   color:#fff;
   text-align:center;
-  padding:14px 12px 18px;
-  border-radius:0 0 24px 24px;
-  box-shadow:0 3px 12px rgba(0,0,0,.18);
+  padding:15px 12px 20px;
+  border-radius:0 0 28px 28px;
+  box-shadow:0 4px 15px rgba(0,0,0,.18);
 }
 
 .logo{
-  width:55px;
-  height:55px;
-  border-radius:50%;
+  width:58px;
+  height:58px;
   object-fit:cover;
-  border:2px solid #fff;
-  box-shadow:0 0 12px rgba(255,255,255,.7);
+  border-radius:50%;
+  border:2px solid white;
+  box-shadow:0 0 14px rgba(255,255,255,.8);
 }
 
 .top h1{
-  font-size:23px;
-  margin:7px 0;
+  margin:8px 0;
+  font-size:25px;
 }
 
 .clock{
   display:inline-block;
   background:rgba(0,0,0,.22);
-  padding:7px 16px;
-  border-radius:20px;
+  padding:8px 17px;
+  border-radius:25px;
+  font-size:18px;
   font-weight:bold;
-  margin:5px 0;
 }
 
 .live{
-  margin:12px;
-  padding:11px;
+  margin:14px 12px;
+  padding:12px;
   text-align:center;
   color:white;
   font-weight:bold;
-  border-radius:12px;
+  font-size:18px;
+  border-radius:14px;
   background:linear-gradient(90deg,#43a047,#81c784);
 }
 
 .update{
   display:none;
   margin:12px;
-  padding:12px;
+  padding:13px;
   text-align:center;
-  background:#fff;
-  color:#2e7d32;
+  color:#1b5e20;
+  background:white;
+  border-radius:13px;
   font-weight:bold;
-  border-radius:12px;
   animation:glow 1s infinite alternate;
 }
 
 @keyframes glow{
-  from{box-shadow:0 0 7px #66bb6a}
+  from{box-shadow:0 0 7px #81c784}
   to{box-shadow:0 0 25px #2e7d32}
 }
 
 .table-box{
   margin:12px;
   background:#fff;
-  border-radius:15px;
+  border-radius:16px;
   overflow:hidden;
-  box-shadow:0 3px 12px rgba(0,0,0,.12);
+  box-shadow:0 4px 14px rgba(0,0,0,.13);
 }
 
 .table-title{
-  padding:13px;
+  padding:14px;
   text-align:center;
   color:#fff;
-  font-size:19px;
+  font-size:21px;
   font-weight:bold;
   background:linear-gradient(135deg,#2e7d32,#66bb6a);
 }
@@ -102,13 +103,13 @@ table{
 th{
   background:#e8f5e9;
   color:#1b5e20;
-  padding:11px 5px;
+  padding:12px 5px;
   font-size:13px;
   border-bottom:2px solid #81c784;
 }
 
 td{
-  padding:11px 5px;
+  padding:11px 4px;
   text-align:center;
   border-bottom:1px solid #ddd;
   font-size:15px;
@@ -121,34 +122,45 @@ tr:nth-child(even){
 
 .name{
   text-align:left;
-  min-width:125px;
 }
 
-.name img{
+.row-logo{
   width:34px;
   height:34px;
   border-radius:50%;
   object-fit:cover;
   vertical-align:middle;
-  margin-right:6px;
+  margin-right:5px;
   border:2px solid #4caf50;
 }
 
+.name-text{
+  display:inline-block;
+  vertical-align:middle;
+}
+
+.time{
+  font-size:11px;
+  color:#666;
+  margin-top:3px;
+}
+
 .status{
-  padding:4px 8px;
+  display:inline-block;
+  padding:4px 7px;
   border-radius:6px;
-  color:#fff;
   background:#4caf50;
+  color:#fff;
   font-size:11px;
 }
 
 .article{
   margin:12px;
-  padding:16px;
-  background:#fff;
-  border-radius:14px;
+  padding:17px;
+  background:white;
+  border-radius:15px;
   border-left:5px solid #4caf50;
-  box-shadow:0 2px 8px rgba(0,0,0,.1);
+  box-shadow:0 2px 9px rgba(0,0,0,.1);
 }
 
 .article h2{
@@ -162,23 +174,36 @@ tr:nth-child(even){
 
 footer{
   margin-top:20px;
-  padding:20px;
+  padding:22px;
   text-align:center;
+  color:white;
   background:#2e7d32;
-  color:#fff;
+}
+
+.footer-logo{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  border:2px solid white;
+  object-fit:cover;
 }
 
 @media(max-width:600px){
-  th,td{
+
+  th{
+    font-size:11px;
+  }
+
+  td{
     font-size:12px;
-    padding:9px 3px;
+    padding:9px 2px;
   }
 
   .name{
-    min-width:110px;
+    min-width:125px;
   }
 
-  .name img{
+  .row-logo{
     width:29px;
     height:29px;
   }
@@ -188,7 +213,7 @@ footer{
 
 <body>
 
-<header class="top">
+<div class="top">
 
   <img src="logo.png" class="logo">
 
@@ -196,7 +221,7 @@ footer{
 
   <div class="clock" id="clock">00:00:00</div>
 
-</header>
+</div>
 
 <div class="live">
 🟢 LIVE • FAST • LATEST UPDATES 🟢
@@ -215,6 +240,7 @@ footer{
   </div>
 
   <table>
+
     <thead>
       <tr>
         <th>STATUS</th>
@@ -225,9 +251,11 @@ footer{
     </thead>
 
     <tbody id="dataBody">
+
       <tr>
         <td colspan="4">Loading data...</td>
       </tr>
+
     </tbody>
 
   </table>
@@ -235,26 +263,30 @@ footer{
 </div>
 
 <div class="article">
+
   <h2>🌿 Daily Updates</h2>
+
   <p>
     यहां latest information और daily updates एक ही जगह
     पर उपलब्ध हैं।
   </p>
+
 </div>
 
 <div class="article">
+
   <h2>⭐ Latest Information</h2>
+
   <p>
     डेटा नियमित रूप से अपडेट किया जाता है ताकि आपको
     latest information आसानी से मिल सके।
   </p>
+
 </div>
 
 <footer>
 
-  <img src="logo.png"
-       style="width:55px;height:55px;border-radius:50%;
-       border:2px solid #fff;object-fit:cover;">
+  <img src="logo.png" class="footer-logo">
 
   <h3 style="margin-top:8px;">ONLINE RESULTS</h3>
 
@@ -262,52 +294,74 @@ footer{
     Fast Updates • Daily Information
   </p>
 
+  <p style="margin-top:8px;font-size:12px;">
+    © 2026 All Rights Reserved
+  </p>
+
 </footer>
 
 <script>
 
-/* LIVE CLOCK */
+/* =========================
+   LIVE CLOCK
+========================= */
 
-function clock(){
+function updateClock(){
 
-  const d = new Date();
+  const now = new Date();
 
-  document.getElementById("clock").innerHTML =
-    "🕒 " +
-    String(d.getHours()).padStart(2,"0") + ":" +
-    String(d.getMinutes()).padStart(2,"0") + ":" +
-    String(d.getSeconds()).padStart(2,"0");
+  const h = String(now.getHours()).padStart(2,"0");
+  const m = String(now.getMinutes()).padStart(2,"0");
+  const s = String(now.getSeconds()).padStart(2,"0");
 
+  document.getElementById("clock").textContent =
+    "🕒 " + h + ":" + m + ":" + s;
 }
 
-setInterval(clock,1000);
-clock();
+updateClock();
+setInterval(updateClock,1000);
 
 
-/* GOOGLE SHEET CSV
-   अपनी सामान्य/non-gambling Google Sheet की
-   published CSV URL यहां लगाएं.
-*/
+/* =========================
+   GOOGLE SHEET
+   सामान्य/non-gambling data
+========================= */
 
-const sheetURL = "YOUR_GOOGLE_SHEET_CSV_URL";
-
+const sheetURL = "YOUR_PUBLISHED_CSV_URL";
 
 let oldData = "";
 let firstLoad = true;
 
 
-/* LOAD DATA */
+/* =========================
+   LOAD SHEET
+========================= */
 
-async function loadData(){
+async function loadSheet(){
 
-  if(sheetURL === "YOUR_GOOGLE_SHEET_CSV_URL"){
+  if(sheetURL === "YOUR_PUBLISHED_CSV_URL"){
+    document.getElementById("dataBody").innerHTML = `
+      <tr>
+        <td colspan="4">
+          Google Sheet CSV URL डालें
+        </td>
+      </tr>
+    `;
     return;
   }
 
   try{
 
-    const response =
-      await fetch(sheetURL + "&t=" + Date.now());
+    const url =
+      sheetURL +
+      (sheetURL.includes("?") ? "&" : "?") +
+      "cache=" + Date.now();
+
+    const response = await fetch(url);
+
+    if(!response.ok){
+      throw new Error("Sheet could not be loaded");
+    }
 
     const text = await response.text();
 
@@ -318,63 +372,157 @@ async function loadData(){
     oldData = text;
     firstLoad = false;
 
-    const rows = text.trim().split(/\r?\n/);
+    const rows = parseCSV(text);
 
     let html = "";
 
     for(let i=1;i<rows.length;i++){
 
-      const col = rows[i].split(",");
+      const col = rows[i];
 
-      if(col.length < 5) continue;
+      if(!col || col.length < 5) continue;
 
       html += `
-      <tr>
+        <tr>
 
-        <td>
-          <span class="status">
-            ${col[0] || "LIVE"}
-          </span>
-        </td>
+          <td>
+            <span class="status">
+              ${escapeHTML(col[0] || "LIVE")}
+            </span>
+          </td>
 
-        <td class="name">
+          <td class="name">
 
-          <img src="logo.png">
+            <img
+              src="logo.png"
+              class="row-logo"
+            >
 
-          <span>
-            ${col[1] || ""}
-            <br>
-            <small>${col[2] || ""}</small>
-          </span>
+            <span class="name-text">
 
-        </td>
+              ${escapeHTML(col[1] || "")}
 
-        <td>${col[3] || "-"}</td>
+              <div class="time">
+                ${escapeHTML(col[2] || "")}
+              </div>
 
-        <td>${col[4] || "-"}</td>
+            </span>
 
-      </tr>
+          </td>
+
+          <td>
+            ${escapeHTML(col[3] || "-")}
+          </td>
+
+          <td>
+            ${escapeHTML(col[4] || "-")}
+          </td>
+
+        </tr>
       `;
-
     }
 
     document.getElementById("dataBody").innerHTML =
-      html || `
-      <tr>
+      html ||
+      `<tr>
         <td colspan="4">No data available</td>
-      </tr>
-      `;
+      </tr>`;
 
   }catch(error){
 
-    console.log("Data loading error:",error);
+    console.log(error);
 
+    document.getElementById("dataBody").innerHTML =
+      `<tr>
+        <td colspan="4">
+          Data load नहीं हो पाया
+        </td>
+      </tr>`;
   }
-
 }
 
 
-/* 15 MINUTE GLOW */
+/* =========================
+   CSV PARSER
+========================= */
+
+function parseCSV(text){
+
+  const rows = [];
+  let row = [];
+  let value = "";
+  let quotes = false;
+
+  for(let i=0;i<text.length;i++){
+
+    const char = text[i];
+    const next = text[i+1];
+
+    if(char === '"' && quotes && next === '"'){
+      value += '"';
+      i++;
+    }
+
+    else if(char === '"'){
+      quotes = !quotes;
+    }
+
+    else if(char === "," && !quotes){
+      row.push(value.trim());
+      value = "";
+    }
+
+    else if((char === "\n" || char === "\r") && !quotes){
+
+      if(char === "\r" && next === "\n"){
+        i++;
+      }
+
+      row.push(value.trim());
+      value = "";
+
+      if(row.some(x => x !== "")){
+        rows.push(row);
+      }
+
+      row = [];
+    }
+
+    else{
+      value += char;
+    }
+  }
+
+  if(value !== "" || row.length){
+    row.push(value.trim());
+
+    if(row.some(x => x !== "")){
+      rows.push(row);
+    }
+  }
+
+  return rows;
+}
+
+
+/* =========================
+   SAFE TEXT
+========================= */
+
+function escapeHTML(text){
+
+  return String(text)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+}
+
+
+/* =========================
+   15 MINUTE UPDATE GLOW
+========================= */
 
 function showUpdate(){
 
@@ -386,39 +534,43 @@ function showUpdate(){
 
   box.style.display = "block";
 
-  let end = Date.now() + (15 * 60 * 1000);
+  const end =
+    Date.now() + 15 * 60 * 1000;
 
-  const interval = setInterval(()=>{
+  const interval =
+    setInterval(function(){
 
-    let left = Math.max(0,end-Date.now());
+      const remaining =
+        Math.max(0,end-Date.now());
 
-    let min = Math.floor(left/60000);
+      const minutes =
+        Math.floor(remaining / 60000);
 
-    let sec = Math.floor((left%60000)/1000);
+      const seconds =
+        Math.floor((remaining % 60000) / 1000);
 
-    timer.innerHTML =
-      "✨ Updated • Glow " +
-      String(min).padStart(2,"0") +
-      ":" +
-      String(sec).padStart(2,"0");
+      timer.textContent =
+        "✨ Updated • Glow " +
+        String(minutes).padStart(2,"0") +
+        ":" +
+        String(seconds).padStart(2,"0");
 
-    if(left <= 0){
+      if(remaining <= 0){
 
-      box.style.display = "none";
-      clearInterval(interval);
+        box.style.display = "none";
+        clearInterval(interval);
 
-    }
+      }
 
-  },1000);
-
+    },1000);
 }
 
 
 /* CHECK EVERY 60 SECONDS */
 
-loadData();
+loadSheet();
 
-setInterval(loadData,60000);
+setInterval(loadSheet,60000);
 
 </script>
 
