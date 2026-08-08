@@ -618,115 +618,440 @@ for(let i=1;i<rows.length;i++){
 let col=rows[i].split(",");
 
 topHTML+=`
-<div class="market">🔥 ${col[1]} ........ ${col[2]}</div>
-`;
+<!DOCTYPE html>
+<html lang="hi">
+<head>
 
-let badgeColor=col[0].trim().toUpperCase()=="LIVE"
-?"#16a34a":"#444";
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-resultHTML+=`
+<title>ONLINE RESULTS | SUPER FAST</title>
 
-<div class="box" style="background:${i%2==0?'#ffffff':'#ffe680'}">
+<style>
 
-<div class="status" style="background:${badgeColor}">
-${col[0]}
-</div>
-
-<div class="result">
-
-<div style="font-size:12px;color:#d60000;font-weight:bold;">
-${header[3]} &nbsp;&nbsp; ${header[4]}
-</div>
-
-<div style="font-size:36px;font-weight:bold;line-height:1.1;">
-${col[3]} &nbsp; ${col[4]}
-</div>
-
-</div>
-
-<div class="name">${col[1]}</div>
-
-<div class="time">at ${col[2]}</div>
-
-<div class="chart">
-<a href="#">📈 Record Chart</a>
-</div>
-
-<div style="clear:both;"></div>
-
-</div>
-
-`;
-
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
-document.getElementById("topMarkets").innerHTML=topHTML;
-document.getElementById("result").innerHTML=resultHTML;
-
-});
-
-</script>
-<div class="article">
-
-<h2>🌟 Royal Star Result Today</h2>
-
-<p>
-Royal Star का रिजल्ट प्रतिदिन अपडेट किया जाता है।
-यहां आपको लाइव रिजल्ट, रिकॉर्ड चार्ट और लेटेस्ट अपडेट सबसे पहले मिलते हैं।
-</p>
-
-</div>
-
-<div class="article">
-
-<h2>⭐ Gold Star Result Today</h2>
-
-<p>
-Gold Star मार्केट का लाइव रिजल्ट और पुराने रिकॉर्ड एक ही जगह उपलब्ध हैं।
-</p>
-
-</div>
-
-<div class="article">
-
-<h2>🔥 Delhi Super Bazar Result Today</h2>
-
-<p>
-Delhi Super Bazar के लेटेस्ट रिजल्ट, रिकॉर्ड चार्ट और दैनिक अपडेट यहां उपलब्ध हैं।
-</p>
-
-</div>
-
-</body>
-</html>
-
-
-// LIVE CLOCK
-
-function clock(){
-
-let d=new Date();
-
-document.getElementById("liveClock").innerHTML =
-d.toLocaleString("hi-IN");
-
-
+body{
+background:#f5f5f5;
+color:#333;
 }
 
+/* TOP */
+.top{
+background:linear-gradient(135deg,#4CAF50,#81C784);
+color:#fff;
+padding:15px 20px 20px;
+text-align:center;
+border-radius:0 0 25px 25px;
+box-shadow:0 3px 12px rgba(0,0,0,.15);
+}
 
-setInterval(clock,1000);
+/* SMALL LOGO */
+.logo{
+width:52px;
+height:52px;
+border-radius:50%;
+border:2px solid #fff;
+object-fit:cover;
+margin-bottom:6px;
+box-shadow:0 0 10px rgba(255,255,255,.7);
+}
 
-clock();
+.top h1{
+font-size:23px;
+margin-bottom:5px;
+}
 
+/* CLOCK */
+.clock{
+display:inline-block;
+margin-top:7px;
+padding:7px 15px;
+border-radius:20px;
+background:rgba(0,0,0,.22);
+font-size:16px;
+font-weight:bold;
+letter-spacing:.5px;
+}
 
-</script>
+/* BUTTONS */
+.btn{
+display:inline-block;
+padding:9px 17px;
+margin:6px 3px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+color:#fff;
+}
 
-box-shadow:0 3px 10px #888;
+.whatsapp{
+background:#25D366;
+}
 
+.call{
+background:#388E3C;
+}
+
+/* LIVE BAR */
+.live{
+background:linear-gradient(90deg,#4CAF50,#81C784);
+color:#fff;
+font-size:19px;
+font-weight:bold;
+text-align:center;
+padding:11px;
+margin:12px;
+border-radius:12px;
+}
+
+/* UPDATE NOTIFICATION */
+#updateBox{
+display:none;
+margin:12px;
+padding:13px;
+text-align:center;
+border-radius:12px;
+background:#fff;
+color:#2E7D32;
+font-size:17px;
+font-weight:bold;
+box-shadow:0 0 18px rgba(76,175,80,.8);
+animation:glow 1s infinite alternate;
+}
+
+@keyframes glow{
+from{
+box-shadow:0 0 8px rgba(76,175,80,.4);
+}
+to{
+box-shadow:0 0 25px rgba(76,175,80,1);
+}
+}
+
+/* SHEET */
+.sheet-box{
+background:#fff;
+margin:12px;
+padding:10px;
+border-radius:15px;
+box-shadow:0 3px 10px rgba(0,0,0,.12);
+overflow:hidden;
+}
+
+.sheet-title{
+text-align:center;
+color:#2E7D32;
+font-size:20px;
+font-weight:bold;
+margin:8px 0 12px;
+}
+
+.sheet-frame{
+width:100%;
+height:600px;
+border:0;
+border-radius:10px;
+}
+
+/* ARTICLES */
+.article{
+background:#fff;
+margin:12px;
+padding:16px;
+border-radius:15px;
+box-shadow:0 2px 8px rgba(0,0,0,.10);
+border-left:5px solid #4CAF50;
+}
+
+.article h2{
+color:#2E7D32;
+margin-bottom:10px;
+}
+
+.article p{
+font-size:15px;
+line-height:26px;
+}
+
+/* FOOTER */
+footer{
+background:#4CAF50;
+color:#fff;
+text-align:center;
+padding:20px;
+margin-top:20px;
+border-radius:20px 20px 0 0;
 }
 
 </style>
 
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="top">
+
+<img
+src="789d7790a53dd1b559e465aa1627f199.jpg"
+class="logo"
+>
+
+<h1>ONLINE RESULTS</h1>
+
+<p>⚡ Fast & Latest Updates ⚡</p>
+
+<!-- LIVE CLOCK -->
+<div class="clock" id="clock">
+00:00:00
+</div>
+
+<br>
+
+<a
+class="btn whatsapp"
+href="https://wa.me/919649269875">
+💬 WhatsApp
+</a>
+
+<a
+class="btn call"
+href="tel:9649269875">
+📞 Call Now
+</a>
+
+</div>
+
+
+<div class="live">
+🟢 ONLINE SUPER FAST UPDATES 🟢
+</div>
+
+
+<!-- 15 MINUTE UPDATE GLOW -->
+
+<div id="updateBox">
+🔔 NEW UPDATE AVAILABLE 🔔
+<br>
+<small id="updateTimer">
+Updated just now
+</small>
+</div>
+
+
+<!-- GOOGLE SHEET -->
+
+<div class="sheet-box">
+
+<div class="sheet-title">
+📊 LIVE DATA
+</div>
+
+<iframe
+class="sheet-frame"
+src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQBZCDddBSSFrPnx8hNWqYZOHJv667cU2FP_ngC4PdsjfINvskiZjvoehO_k7448ExK6qq9MkJoU5Kt/pubhtml">
+</iframe>
+
+</div>
+
+
+<div class="article">
+
+<h2>🌿 Daily Updates</h2>
+
+<p>
+यहां आपको latest information और daily updates
+एक ही जगह पर मिलेंगे। डेटा नियमित रूप से अपडेट किया जाता है।
+</p>
+
+</div>
+
+
+<div class="article">
+
+<h2>⭐ Latest Information</h2>
+
+<p>
+वेबसाइट पर उपलब्ध जानकारी को नियमित रूप से अपडेट किया जाता है,
+ताकि आपको latest data आसानी से मिल सके।
+</p>
+
+</div>
+
+
+<footer>
+
+<img
+src="789d7790a53dd1b559e465aa1627f199.jpg"
+style="
+width:55px;
+height:55px;
+border-radius:50%;
+border:2px solid #fff;
+object-fit:cover;
+margin-bottom:8px;
+">
+
+<h3>ONLINE RESULTS</h3>
+
+<p>
+Fast Updates • Daily Information • Latest Data
+</p>
+
+<p style="margin-top:8px;font-size:13px;">
+© 2026 All Rights Reserved
+</p>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   LIVE CLOCK
+========================= */
+
+function updateClock(){
+
+const now = new Date();
+
+let h = String(now.getHours()).padStart(2,"0");
+let m = String(now.getMinutes()).padStart(2,"0");
+let s = String(now.getSeconds()).padStart(2,"0");
+
+document.getElementById("clock").innerHTML =
+"🕒 " + h + ":" + m + ":" + s;
+
+}
+
+setInterval(updateClock,1000);
+updateClock();
+
+
+/* =========================
+   GOOGLE SHEET UPDATE CHECK
+========================= */
+
+const sheetCSV =
+"https://docs.google.com/spreadsheets/d/e/2PACBSSFrPnx8hNWqYZOHJv667cU2FP_ngC4PdsjfINvskiZjvoehO_k7448ExK6qq9MkJoU5Kt/pub?output=csv";
+
+
+let previousData = null;
+let firstLoad = true;
+
+
+/* 15 MINUTES */
+
+const GLOW_TIME = 15 * 60 * 1000;
+
+
+function showUpdate(){
+
+const box =
+document.getElementById("updateBox");
+
+const timer =
+document.getElementById("updateTimer");
+
+box.style.display = "block";
+
+let endTime =
+Date.now() + GLOW_TIME;
+
+
+function countdown(){
+
+let remaining =
+Math.max(0,endTime-Date.now());
+
+let minutes =
+Math.floor(remaining/60000);
+
+let seconds =
+Math.floor((remaining%60000)/1000);
+
+timer.innerHTML =
+"✨ New data updated • Glow " +
+String(minutes).padStart(2,"0") +
+":" +
+String(seconds).padStart(2,"0");
+
+if(remaining <= 0){
+
+box.style.display = "none";
+
+clearInterval(countdownInterval);
+
+}
+
+}
+
+countdown();
+
+const countdownInterval =
+setInterval(countdown,1000);
+
+}
+
+
+/* CHECK DATA */
+
+async function checkForUpdate(){
+
+try{
+
+const response =
+await fetch(sheetCSV + "&t=" + Date.now());
+
+const data =
+await response.text();
+
+
+if(firstLoad){
+
+previousData = data;
+firstLoad = false;
+return;
+
+}
+
+
+/* DATA CHANGED */
+
+if(data !== previousData){
+
+previousData = data;
+
+showUpdate();
+
+}
+
+}catch(error){
+
+console.log("Sheet update check failed");
+
+}
+
+}
+
+
+/* CHECK EVERY 60 SECONDS */
+
+checkForUpdate();
+
+setInterval(
+checkForUpdate,
+60000
+);
+
+</script>
+
 </body>
- 
 </html>
